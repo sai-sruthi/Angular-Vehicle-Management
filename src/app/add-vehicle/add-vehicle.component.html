@@ -1,0 +1,65 @@
+<h2>Add New Service </h2>
+<form class="form-horizontal" #form="ngForm" (submit)="submitForm()" novalidate>
+  <fieldset>
+  <div class="form-group"  [class.has-error] = "firstname.invalid && firstname.touched">
+      <label for="inputfname" class="col-lg-2 control-label" style="float:left">First Name</label>
+       <div class="col-lg-8">
+        <input  #firstname="ngModel" pattern="...+" required type="text" class="form-control" id="inputfname" placeholder="First Name" name="firstname" [(ngModel)]="model.firstname">
+        <div *ngIf="firstname.invalid && firstname.touched" class="alert alert-danger">
+            First Name is required and should be atleast 3 characters.
+        </div>
+        </div>
+      </div>
+<div class="form-group">
+      <label for="inputlname" class="col-lg-2 control-label" style="float:left">Last Name</label>
+       <div class="col-lg-8">
+      <input type="text" required class="form-control" id="inputlname" placeholder="Last Name" name="lastname" [(ngModel)]="model.lastname">
+        </div>
+</div>
+<div class="form-group" [class.has-error]="mobile.invalid && mobile.touched">
+      <label for="inputmob" class="col-lg-2 control-label" style="float:left">Mobile Number</label>
+       <div class="col-lg-8">
+      <input type="text" #mobile="ngModel" pattern="[0-9]{10}" required class="form-control" id="inputmob" placeholder="Mobile Number" name="mob" [(ngModel)]="model.mobileNo">
+        <div *ngIf="mobile.invalid && mobile.touched" class="alert alert-danger">
+            Mobile Number is required and should be 10 digits.
+        </div>
+        </div>
+</div>
+<div class="form-group" [class.has-error]="vehicleno.invalid && vehicleno.touched">
+      <label for="inputvehicle" class="col-lg-2 control-label" style="float:left">Vehicle Reg. No.</label>
+       <div class="col-lg-8">
+      <input type="text" #vehicleno="ngModel" required class="form-control" id="inputvehicle" placeholder="Registration Number" name="vehicleReg" [(ngModel)]="model.vehicleRegNo">
+       <div *ngIf="vehicleno.invalid && vehicleno.touched" class="alert alert-danger">
+            Vehicle Registration Number is required.
+        </div>
+        </div>
+</div>
+<div class="form-group" [class.has-error]="address.invalid && address.touched">
+      <label for="textArea" class="col-lg-2 control-label">Address</label>
+      <div class="col-lg-8">
+        <textarea class="form-control" #address="ngModel" required rows="3" id="textArea" placeholder="Address" name="address" [(ngModel)]="model.address"></textarea>
+         <div *ngIf="address.invalid && address.touched" class="alert alert-danger">
+           Address is required.
+        </div>
+      </div>
+</div>
+   <div class="form-group">
+      <label for="inputpick" class="col-lg-2 control-label" style="float:left">Pickup Date</label>
+       <div class="col-lg-8">
+      <input type="date" required class="form-control" id="inputpick" name="pickup" [(ngModel)]="model.pickupDta">
+      </div>
+</div>
+ <div class="form-group">
+      <label for="inputreturn" class="col-lg-2 control-label" style="float:left">Return Date</label>
+       <div class="col-lg-8">
+      <input type="date" required class="form-control" id="inputreturn" name="return" [(ngModel)]="model.returnDate">
+      </div>
+</div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancel</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>

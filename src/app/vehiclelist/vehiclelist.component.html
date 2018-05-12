@@ -1,0 +1,18 @@
+<h3>Service Requests</h3>
+<ul class="list-group">
+<li *ngFor="let vehicle of vehicles" class="list-group-item">
+  <div> <b>First Name :</b> {{vehicle.firstname}}
+    <button action="right" inlist="true" class="btn btn-danger btn-xs" (click)="deleteVehicle(vehicle.id)">Delete</button> 
+   <button action="right" inlist="true" class="btn btn-info btn-xs" (click)="viewVehicle(vehicle.id)">View</button>
+  </div>
+  <br/>
+ 
+    <div> <b>Last Name :</b>  {{vehicle.lastname}}</div>
+  <br/>
+   <div><b>Vehicle Number :</b>{{vehicle.vehicleRegNo}}</div>
+</li>
+</ul>
+<div class="mainbuttons">
+<button action="right" main="true" class="btn btn-primary" (click)="addVehicle()">Add New Request</button>
+<button action="right" main="true" class="btn btn-primary" (click)="undoChange()">Undo</button>
+</div>
