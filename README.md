@@ -1,5 +1,6 @@
 # Assignment
 
+The project performs the basic CRUD operations for the Vehicles. The routes have been used to direct to a new web page with every operation. Tha local storage is used to save the data, hence the data will be cleared with the browser. 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
 ## Development server
